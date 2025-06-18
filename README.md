@@ -227,7 +227,7 @@ In the `main()` method, we can see that `GraphicNovel` objects are able to use m
 ### >Exercise: Botany Simulation
 You're a botany student trying to create a simulation of how different plant species behave throughout their life cycles. You're most interested in the behaviors of non-carnivorous plants vs. carnivorous plants. First, you have to set up classes for both that define what traits and behaviors will be used.
 
-[`Plant.java`](<Botany Simulation/Plant.java>) [`CarnivorousPlant.java`](<Botany Simulation/CarnivorousPlant.java>)
+[`Plant.java`](botanysimulation/Plant.java) [`CarnivorousPlant.java`](botanysimulation/CarnivorousPlant.java)
 1. Inside `Plant.java`, create a class that will define general behaviors and traits of plants. Add fields for `age`, `height`, and `color`, as well as a parameterized constructor to initialize these fields. Add two methods called `drinkWater()` and `photosynthesize()` that print what the plant is doing.
 2. Inside `CarnivorousPlant.java`, create a class that inherits from the `Plant` class.
 3. Add a method in the `CarnivorousPlant` class, `eatInsect()`, that prints what the plant is doing.
@@ -359,7 +359,7 @@ The `super` keyword can be used to call the overridden method from the newer met
 ### >Exercise: Ornithology
 You're an ornithologist (you study birds). You want to make a video game that will help elementary school students learn the different types of birds, starting with whether or not a species is capable of flight.
 
-[`Orinthology.java`](Orinthology/Bird.java) [`FlightlessBird.java`](Orinthology/FlightlessBird.java)
+[`Orinthology.java`](orinthology/Bird.java) [`FlightlessBird.java`](orinthology/FlightlessBird.java)
 1. In `Bird.java`, create a class with a single method `fly()` that prints `I'm flying!`.
 2. In `FlightlessBird.java`, create a class that inherits the `fly()` method from `Bird.java`.
 3. *Override* this method to print `I can't fly :(` instead of `I'm flying!`.
@@ -457,7 +457,7 @@ Most interfaces you'll encounter are very small and have generic blanket names l
 ### >Exercise: Devices
 You're an electrician creating a model for different household electrical appliances. You plan to give all of them the ability to turn on and turn off, but want to leave the specific functionalities for later.
 
-[`Device.java`](Devices/Device.java) [`LightSwitch.java`](Devices/LightSwitch.java) [`Computer.java`](Devices/Computer.java)
+[`Device.java`](devices/Device.java) [`LightSwitch.java`](devices/LightSwitch.java) [`Computer.java`](devices/Computer.java)
 1. In `Device.java`, create an interface class for your devices that outlines two `void` methods, `turnOn()` and `turnOff()`.
 2. In `LightSwitch.java`, create a class that uses this blueprint.
 3. Add a field in the `LightSwitch` class that tracks whether the light is on or off (starting at off).
