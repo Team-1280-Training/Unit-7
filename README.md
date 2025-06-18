@@ -33,7 +33,7 @@ As always, use these concepts only when they clearly benefit your program. Pick 
 In Java, types can be divided into two separate categories: **primitive** types and **non-primitive** types (also called reference types or object types).
 
 **Primitive data types** are special, core data types built into Java. 
-Java has 8 primitive data types: `byte`, `short`, `int`, `long`, `float`, `double`, `char`, and `boolean`. \
+Java has 8 primitive data types: `byte`, `short`, `int`, `long`, `float`, `double`, `char`, and `boolean`. 
 
 **Non-primitive data types**, or **reference types**, are types that refer to *objects* rather than primitives. All classes are reference types. \
 Some examples of non-primitives include `String`, arrays, user-defined classes, and interfaces. \
@@ -225,14 +225,70 @@ In the `main()` method, we can see that `GraphicNovel` objects are able to use m
 > **Note:** There are extra rules for constructors of subclasses. A subclass constructor must call the superclass constructor as the very first thing it does. (If the call is omitted, then the parameterless superclass constructor is implicitly called.)
 
 ### >Exercise: Botany Simulation
-**This exercise involves using multiple Java files!** You will need to write your program in `Plant.java` *and* `CarnivorousPlant.java`.
-1. You're a botany student trying to create a simulation of how different plant species behave throughout their life cycles. You're most interested in the behaviors of non-carnivorous plants vs. carnivorous plants. First, you have to set up classes for both that define what traits and behaviors will be used.
-2. Inside `Plant.java`, create a class that will define general behaviors and traits of plants. Add fields for `age`, `height`, and `color`, as well as a parameterized constructor to initialize these fields. Add two methods called `drinkWater()` and `photosynthesize()` that print what the plant is doing.
-3. Inside `CarnivorousPlant.java`, create a class that inherits from the `Plant` class.
-4. Add a method in the `CarnivorousPlant` class, `eatInsect()`, that prints what the plant is doing.
-5. Add a constructor for the `CarnivorousPlant` class that just invokes the `Plant` constructor with the same parameters.
-6. Inside the `main()` method, create a new `CarnivorousPlant` called `venusFlytrap`. The plant is 3 years old, 12cm tall, and light green in color.
-7. Test your `drinkWater()`, `photosynthesize()`, and `eatInsect()` methods. You now have a very healthy simulated venus flytrap!
+You're a botany student trying to create a simulation of how different plant species behave throughout their life cycles. You're most interested in the behaviors of non-carnivorous plants vs. carnivorous plants. First, you have to set up classes for both that define what traits and behaviors will be used.
+
+[`Plant.java`](<Botany Simulation/Plant.java>) [`CarnivorousPlant.java`](<Botany Simulation/CarnivorousPlant.java>)
+1. Inside `Plant.java`, create a class that will define general behaviors and traits of plants. Add fields for `age`, `height`, and `color`, as well as a parameterized constructor to initialize these fields. Add two methods called `drinkWater()` and `photosynthesize()` that print what the plant is doing.
+2. Inside `CarnivorousPlant.java`, create a class that inherits from the `Plant` class.
+3. Add a method in the `CarnivorousPlant` class, `eatInsect()`, that prints what the plant is doing.
+4. Add a constructor for the `CarnivorousPlant` class that just invokes the `Plant` constructor with the same parameters.
+5. Inside the `main()` method, create a new `CarnivorousPlant` called `venusFlytrap`. The plant is 3 years old, 12cm tall, and light green in color.
+6. Test your `drinkWater()`, `photosynthesize()`, and `eatInsect()` methods. You now have a very healthy simulated venus flytrap!
+
+<details><summary>Solution Code</summary>
+
+Plant.java:
+
+```java
+public class Plant {
+    int age;
+    double height;
+    String color;
+
+    public Plant(int age, double height, String color) {
+        this.age = age;
+        this.height = height;
+        this.color = color;
+    }
+
+    public void drinkWater() {
+        System.out.println("The plant is drinking water.");
+    }
+
+    public void photosyntesize() {
+        System.out.println("The plant is photosynthesizing.");
+    }
+}
+```
+
+CarnivorousPlant.java
+
+```java
+public class CarnivorousPlant extends Plant {
+    public void eatInsect() {
+        System.out.println("The plant is eating an insect.");
+    }
+
+    public CarnivorousPlant(int age, double height, String color) {
+        super(age, height, color);
+    }
+
+    public static void main(String[] args) {
+        CarnivorousPlant venusFlytrap = new CarnivorousPlant(3, 12.0, "light green");
+        venusFlytrap.drinkWater();
+        venusFlytrap.photosyntesize();
+        venusFlytrap.eatInsect();
+    }
+}
+```
+
+Output:
+```
+The plant is drinking water.
+The plant is photosynthesizing.
+The plant is eating an insect.
+```
+</details>
 
 ## Polymorphism
 In Java, the *declared type* (type listed in the variable declaration or method return type) and the *actual type* (type of the actual object) can differ in some cases. \
@@ -301,12 +357,51 @@ So when the `makeSound()` method is called, it is `Meow` for `Cat` objects and `
 The `super` keyword can be used to call the overridden method from the newer method, helpful when you want to *extend* behavior rather than completely *replace* it.
 
 ### >Exercise: Ornithology
-1. You're an ornithologist (you study birds). You want to make a video game that will help elementary school students learn the different types of birds, starting with whether or not a species is capable of flight.
-2. In `Bird.java`, create a class with a single method `fly()` that prints `I'm flying!`.
-3. In `FlightlessBird.java`, create a class that inherits the `fly()` method from `Bird.java`.
-4. *Override* this method to print `I can't fly :(` instead of `I'm flying!`.
-5. In the `main` method of `FlightlessBird.java`, create two new birds. One `Bird` called `crow`, and one `FlightlessBird` called `penguin`.
-6. Call the `fly()` method on both. `crow.fly()` should print `I'm flying!`, while `penguin.fly()` should print `I can't fly :(`
+You're an ornithologist (you study birds). You want to make a video game that will help elementary school students learn the different types of birds, starting with whether or not a species is capable of flight.
+
+[`Orinthology.java`](Orinthology/Bird.java) [`FlightlessBird.java`](Orinthology/FlightlessBird.java)
+1. In `Bird.java`, create a class with a single method `fly()` that prints `I'm flying!`.
+2. In `FlightlessBird.java`, create a class that inherits the `fly()` method from `Bird.java`.
+3. *Override* this method to print `I can't fly :(` instead of `I'm flying!`.
+4. In the `main` method of `FlightlessBird.java`, create two new birds. One `Bird` called `crow`, and one `FlightlessBird` called `penguin`.
+5. Call the `fly()` method on both. `crow.fly()` should print `I'm flying!`, while `penguin.fly()` should print `I can't fly :(`
+
+<details><summary>Solution Code</summary>
+
+Bird.java:
+
+```java
+public class Bird {
+    public void fly() {
+        System.out.println("I'm flying!");
+    }
+}
+```
+
+FlightlessBird.java:
+
+```java
+public class FlightlessBird extends Bird {
+    @Override
+    public void fly() {
+        System.out.println("I can't fly :(");
+    }
+
+    public static void main (String[] args) {
+        Bird crow = new Bird();
+        FlightlessBird penguin = new FlightlessBird();
+        crow.fly();
+        penguin.fly();
+    }
+}
+```
+
+Output:
+```
+I'm flying!
+I can't fly :(
+```
+</details>
 
 ## Abstraction
 **Abstraction** is a broad concept in programming, referring to the act of hiding details and only displaying the essential features of something. \
@@ -360,17 +455,103 @@ We can still use an interface as a declared type. No object ever has its actual 
 Most interfaces you'll encounter are very small and have generic blanket names like `Runnable` or `Supplier`.
 
 ### >Exercise: Devices
-1. You're an electrician creating a model for different household electrical appliances. You plan to give all of them the ability to turn on and turn off, but want to leave the specific functionalities for later.
-2. In `Device.java`, create an interface class for your devices that outlines two `void` methods, `turnOn()` and `turnOff()`.
-3. In `LightSwitch.java`, create a class that uses this blueprint.
-4. Add a field in the `LightSwitch` class that tracks whether the light is on or off (starting at off).
-5. Define method bodies for `turnOn()` and `turnOff()` that print their respective actions and update the on/off field.
-6. In a `main()` method in the `LightSwitch` class, create a new `LightSwitch`. Try turning on and off, and print whether it is on/off to check the accuracy of the field value.
-7. In `Computer.java`, create a class that uses your `Device` blueprint as well.
-8. Create a field to track whether the computer is on or off (starting at off)
-9. Define the `turnOn()` and `turnOff()` methods to print "Hello World!" and "Goodbye World!" respectively, and to update your on/off variable.
-10. Add an additional `type()` method that takes in a `String` and, if the computer is on, prints it out. If not, it does nothing.
-11. In a `main()` method in the `Computer` class, make a new computer and test it out! Try typing something, turn it on, type something, and turn it off. Make sure the on/off field is being updated correctly!
+You're an electrician creating a model for different household electrical appliances. You plan to give all of them the ability to turn on and turn off, but want to leave the specific functionalities for later.
+
+[`Device.java`](Devices/Device.java) [`LightSwitch.java`](Devices/LightSwitch.java) [`Computer.java`](Devices/Computer.java)
+1. In `Device.java`, create an interface class for your devices that outlines two `void` methods, `turnOn()` and `turnOff()`.
+2. In `LightSwitch.java`, create a class that uses this blueprint.
+3. Add a field in the `LightSwitch` class that tracks whether the light is on or off (starting at off).
+4. Define method bodies for `turnOn()` and `turnOff()` that print their respective actions and update the on/off field.
+5. In a `main()` method in the `LightSwitch` class, create a new `LightSwitch`. Try turning on and off, and print whether it is on/off to check the accuracy of the field value.
+6. In `Computer.java`, create a class that uses your `Device` blueprint as well.
+7. Create a field to track whether the computer is on or off (starting at off)
+8. Define the `turnOn()` and `turnOff()` methods to print "Hello World!" and "Goodbye World!" respectively, and to update your on/off variable.
+9. Add an additional `type()` method that takes in a `String` and, if the computer is on, prints it out. If not, it does nothing.
+10. In a `main()` method in the `Computer` class, make a new computer and test it out! Try typing something, turn it on, type something, and turn it off. Make sure the on/off field is being updated correctly!
+
+<details><summary>Solution Code</summary>
+
+Device.java:
+```java
+interface Device {
+    void turnOn();
+    void turnOff();
+}
+```
+
+LightSwitch.java:
+```java
+public class LightSwitch implements Device {
+    boolean isOn = false;
+
+    public void turnOn() {
+        isOn = true;
+        System.out.println("Light on!");
+    }
+
+    public void turnOff() {
+        isOn = false;
+        System.out.println("Light off!");
+    }
+
+    public static void main (String[] args) {
+        LightSwitch light = new LightSwitch();
+        light.turnOn();
+        System.out.println(light.isOn);
+        light.turnOff();
+        System.out.println(light.isOn);
+    }
+}
+```
+
+Computer.java:
+```java
+public class Computer implements Device {
+    boolean isOn = false;
+
+    public void turnOn() {
+        isOn = true;
+        System.out.println("Hello World!");
+    }
+
+    public void turnOff() {
+        isOn = false;
+        System.out.println("Goodbye World!");
+    }
+
+    public void type(String message) {
+        if (isOn) {
+        System.out.println(message);
+        }
+    }
+
+    public static void main(String [] args) {
+        Computer laptop = new Computer();
+        laptop.type("asdfgjm");
+        laptop.turnOn();
+        laptop.type("asdfgjm");
+        laptop.turnOff();
+    }
+}
+```
+
+Output:
+
+Light Switch:
+```
+Light on!
+true
+Light off!
+false
+```
+
+Computer:
+```
+Hello World!
+asdfgjm
+Goodbye World!
+```
+</details>
 
 ## Recap
 - Types are either primitive (`int`, `boolean`) or non-primitive (`String`, all classes)
