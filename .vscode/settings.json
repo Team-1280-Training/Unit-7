@@ -1,4 +1,6 @@
 {
     "java.inlayHints.parameterNames.enabled": "none",
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "vsintellicode.java.completionsEnabled": false,
+    "vsintellicode.modify.editor.suggestSelection": "disabled"
 }
