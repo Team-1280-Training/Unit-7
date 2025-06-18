@@ -240,7 +240,7 @@ You're a botany student trying to create a simulation of how different plant spe
 Plant.java:
 
 ```java
-public class Plant {
+public class Plant { 
     int age;
     double height;
     String color;
