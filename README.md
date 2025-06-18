@@ -458,7 +458,7 @@ Most interfaces you'll encounter are very small and have generic blanket names l
 You're an electrician creating a model for different household electrical appliances. You plan to give all of them the ability to turn on and turn off, but want to leave the specific functionalities for later.
 
 [`Device.java`](devices/Device.java) [`LightSwitch.java`](devices/LightSwitch.java) [`Computer.java`](devices/Computer.java)
-1. In `Device.java`, create an interface class for your devices that outlines two `void` methods, `turnOn()` and `turnOff()`.
+1. In `Device.java`, create an interface class for your devices that outlines two `void` methods: `turnOn()` and `turnOff()`.
 2. In `LightSwitch.java`, create a class that uses this blueprint.
 3. Add a field in the `LightSwitch` class that tracks whether the light is on or off (starting at off).
 4. Define method bodies for `turnOn()` and `turnOff()` that print their respective actions and update the on/off field.
