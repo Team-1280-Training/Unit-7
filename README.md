@@ -359,7 +359,7 @@ The `super` keyword can be used to call the overridden method from the newer met
 ### >Exercise: Ornithology
 You're an ornithologist (you study birds). You want to make a video game that will help elementary school students learn the different types of birds, starting with whether or not a species is capable of flight.
 
-[`Orinthology.java`](orinthology/Bird.java) [`FlightlessBird.java`](orinthology/FlightlessBird.java)
+[`Bird.java`](ornithology/Bird.java) [`FlightlessBird.java`](ornithology/FlightlessBird.java)
 1. In `Bird.java`, create a class with a single method `fly()` that prints `I'm flying!`.
 2. In `FlightlessBird.java`, create a class that inherits the `fly()` method from `Bird.java`.
 3. *Override* this method to print `I can't fly :(` instead of `I'm flying!`.
