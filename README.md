@@ -18,7 +18,7 @@ As always, use these concepts only when they clearly benefit your program. Pick 
     - [>Exercise: Botany Simulation](#exercise-botany-simulation)
 - [Polymorphism](#polymorphism)
     - [Method Overriding](#method-overriding)
-    - [Exercise: Ornithology](#exercise-ornithology)
+    - [>Exercise: Ornithology](#exercise-ornithology)
 - [Abstraction](#abstraction)
     - [Interfaces](#interfaces)
     - [>Exercise: Devices](#exercise-devices)
