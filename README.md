@@ -61,7 +61,7 @@ The default value for all reference types is **`null`**.
 **`null`** is a special value that represents the *absence* of an object or reference. It essentially tells us that a variable is empty and doesn't refer to any object. \
 Attempting to use methods or fields of an object that is actually null will result in an error while the program is running.
 
-`null` can legally be used anywhere where a normal, non-primitive object is expected. So be cautious, as an unexpected `null` value is one of the most common reasons for a runtime crash. \
+`null` can legally be used anywhere where a normal, non-primitive object is expected. So be cautious, as an unexpected `null` value is one of the most common reasons for a runtime crash.
 
 Many operations return `null` upon failure. \
 Use `== null` to check for `null`.
