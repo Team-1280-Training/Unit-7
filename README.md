@@ -568,7 +568,9 @@ Goodbye World!
 - Interfaces, defined with `interface` keyword instead of `class`, define the exposed parts (implementation is optional) of what an adhering class has
 
 ## Feedback
-Please provide feedback if you have any.
+Please provide feedback if you have any. \
+Also, please give an estimate of how much time you spent on this unit.
+
 <details><summary>Possible feedback points</summary>
 
 - Confusing explanations
