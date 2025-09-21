@@ -229,7 +229,7 @@ In the `main()` method, we can see that `GraphicNovel` objects are able to use m
 ### >Exercise: Botany Simulation
 You're a botany student trying to create a simulation of how different plant species behave throughout their life cycles. You're most interested in the behaviors of non-carnivorous plants vs. carnivorous plants. First, you have to set up classes for both that define what traits and behaviors will be used.
 
-[`Plant.java`](botanysimulation/Plant.java) [`CarnivorousPlant.java`](botanysimulation/CarnivorousPlant.java)
+[`Plant.java`](botany/Plant.java) [`CarnivorousPlant.java`](botany/CarnivorousPlant.java)
 1. Inside `Plant.java`, create a class that will define general behaviors and traits of plants. Add fields for `age`, `height`, and `color`, as well as a parameterized constructor to initialize these fields. Add two methods called `drinkWater()` and `photosynthesize()` that print what the plant is doing.
 2. Inside `CarnivorousPlant.java`, create a class that inherits from the `Plant` class.
 3. Add a method in the `CarnivorousPlant` class, `eatInsect()`, that prints what the plant is doing.
