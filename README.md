@@ -5,6 +5,8 @@ Now that we've covered the basic object-oriented programming concepts in Unit 6,
 
 As always, use these concepts only when they clearly benefit your program. Pick the right tools for your situation.
 
+This unit does not have a project.
+
 ### Table of Contents
 - [Introduction](#introduction)
     - [Table of Contents](#table-of-contents)
