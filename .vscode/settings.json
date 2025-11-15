@@ -2,5 +2,6 @@
     "java.inlayHints.parameterNames.enabled": "none",
     "extensions.ignoreRecommendations": false,
     "vsintellicode.java.completionsEnabled": false,
-    "vsintellicode.modify.editor.suggestSelection": "disabled"
+    "vsintellicode.modify.editor.suggestSelection": "disabled",
+    "github.copilot.editor.enableAutoCompletions": false,
 }
